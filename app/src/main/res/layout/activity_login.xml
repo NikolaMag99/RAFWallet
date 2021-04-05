@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+
+
+
+    <ImageView
+        android:id="@+id/imageLogin"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/novacanica"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/imageLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="23sp"
+        android:text="Novcanik sistem za studente RAF-a"
+        />
+
+    <EditText
+        android:id="@+id/imeLogin"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:hint="Unesite ime"
+        />
+
+    <EditText
+        android:id="@+id/prezimeLogin"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/imeLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:hint="Unesite prezime"/>
+
+    <EditText
+        android:id="@+id/bankaLogin"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/prezimeLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:hint="Unesite ime banke"/>
+
+    <EditText
+        android:id="@+id/passwordLogin"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/bankaLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:hint="Unesite sifru"/>
+
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Prijava"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
