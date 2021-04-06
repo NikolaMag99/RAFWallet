@@ -11,6 +11,7 @@
         android:theme="@style/Theme.Projekat1">
         <activity android:name=".ProfileActivity"></activity>
         <activity android:name=".LoginActivity" />
+        <activity android:name=".BottomNavigationActivity" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme">

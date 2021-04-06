@@ -6,4 +6,8 @@
     <string name="unesite_ime_banke">Enter the bank name</string>
     <string name="unesite_prezime">Enter last name</string>
     <string name="unesite_ime">Enter first name</string>
+    <string name="profil">Profil</string>
+    <string name="liste">Lists</string>
+    <string name="unos">Add</string>
+    <string name="stanje">Balance</string>
 </resources>

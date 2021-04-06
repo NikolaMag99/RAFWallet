@@ -6,4 +6,8 @@
     <string name="unesite_ime_banke">Unesite ime banke</string>
     <string name="unesite_prezime">Unesite prezime</string>
     <string name="unesite_ime">Unesite ime</string>
+    <string name="stanje">Stanje</string>
+    <string name="unos">Unos</string>
+    <string name="liste">Liste</string>
+    <string name="profil">Profil</string>
 </resources>

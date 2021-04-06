@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import raf.rs.projekat1.fragments.Profil;
+
 public class LoginActivity extends AppCompatActivity {
 
 
@@ -59,7 +61,12 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
            else{
-                Toast.makeText(this, "Nije dobra sifra!", Toast.LENGTH_SHORT).show();
+               if(sifra.getText().toString().isEmpty()){
+                   Toast.makeText(this, "Niste uneli sifru!", Toast.LENGTH_SHORT).show();
+               }else {
+                   Toast.makeText(this, "Nije dobra sifra!", Toast.LENGTH_SHORT).show();
+               }
+
             }
 
         });
@@ -75,8 +82,9 @@ public class LoginActivity extends AppCompatActivity {
                 .apply();
         messageWritten = true;
         if (messageWritten){
-            Intent intent = new Intent(this, ProfileActivity.class);
-            intent.putExtra(ProfileActivity.USER_KEY, new User(ime.getText().toString()));
+            Intent intent = new Intent(this, BottomNavigationActivity.class);
+            Intent intent2 = new Intent(this, Profil.class);
+            intent2.putExtra(Profil.USER_KEY, new User(ime.getText().toString()));
             startActivityForResult(intent, PREFERENCE_WRITE_REQUEST_CODE);
             Toast.makeText(this, "Dobro ti meni doso " + ime.getText().toString(), Toast.LENGTH_SHORT).show();
         }
