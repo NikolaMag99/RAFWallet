@@ -83,8 +83,8 @@ public class LoginActivity extends AppCompatActivity {
         messageWritten = true;
         if (messageWritten){
             Intent intent = new Intent(this, BottomNavigationActivity.class);
-            Intent intent2 = new Intent(this, Profil.class);
-            intent2.putExtra(Profil.USER_KEY, new User(ime.getText().toString()));
+//            Intent intent2 = new Intent(this, Profil.class);
+//            intent2.putExtra(Profil.USER_KEY, new User(ime.getText().toString()));
             startActivityForResult(intent, PREFERENCE_WRITE_REQUEST_CODE);
             Toast.makeText(this, "Dobro ti meni doso " + ime.getText().toString(), Toast.LENGTH_SHORT).show();
         }

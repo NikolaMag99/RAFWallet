@@ -1,14 +1,65 @@
 package raf.rs.projekat1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import raf.rs.projekat1.fragments.Profil;
 
 public class MainActivity extends AppCompatActivity {
+
+    private EditText ime;
+    private EditText prezime;
+    private EditText banka;
+    private Button izmeni;
+    private boolean messageWritten = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.edit_profil);
+        init();
+    }
+
+    private void init() {
+        initView();
+        initListener();
+    }
+
+    private void initView() {
+        prezime = findViewById(R.id.prezimeEdit);
+        ime = findViewById(R.id.imeEdit);
+        banka = findViewById(R.id.bankaEdit);
+        izmeni = findViewById(R.id.izmeniEdit);
+
+    }
+
+    private void initListener() {
+        izmeni.setOnClickListener(v -> {
+            izmeniUser();
+        });
+    }
+
+    private void izmeniUser() {
+        SharedPreferences sharedPreferences = getSharedPreferences(getPackageName(), Context.MODE_PRIVATE);
+        sharedPreferences
+                .edit()
+                .putString(LoginActivity.PREF_MESSAGE_KEY, ime.getText().toString())
+                .putString(LoginActivity.PREF_MESSAGE_KEY2, prezime.getText().toString())
+                .putString(LoginActivity.PREF_MESSAGE_KEY3, banka.getText().toString())
+                .apply();
+        messageWritten = true;
+        if (messageWritten){
+            Intent intent = new Intent(this, BottomNavigationActivity.class);
+            startActivity(intent);
+
+        }
     }
 }

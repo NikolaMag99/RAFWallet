@@ -24,6 +24,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
         android:textSize="23sp"
         android:text="@string/novcanikLoginTekst"
         />
@@ -74,7 +75,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:imeOptions="actionDone"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:hint="@string/unesite_sifru"/>
 
 
