@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class ProfikeActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
     public static final String USER_KEY = "studentKey";
 

@@ -25,7 +25,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="23sp"
-        android:text="Novcanik sistem za studente RAF-a"
+        android:text="@string/novcanikLoginTekst"
         />
 
     <EditText
@@ -38,7 +38,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:imeOptions="actionDone"
         android:inputType="text"
-        android:hint="Unesite ime"
+        android:hint="@string/unesite_ime"
         />
 
     <EditText
@@ -51,7 +51,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:imeOptions="actionDone"
         android:inputType="text"
-        android:hint="Unesite prezime"/>
+        android:hint="@string/unesite_prezime"/>
 
     <EditText
         android:id="@+id/bankaLogin"
@@ -63,7 +63,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:imeOptions="actionDone"
         android:inputType="text"
-        android:hint="Unesite ime banke"/>
+        android:hint="@string/unesite_ime_banke"/>
 
     <EditText
         android:id="@+id/passwordLogin"
@@ -75,7 +75,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:imeOptions="actionDone"
         android:inputType="text"
-        android:hint="Unesite sifru"/>
+        android:hint="@string/unesite_sifru"/>
 
 
     <Button
@@ -86,7 +86,7 @@
         app:layout_constraintTop_toBottomOf="@+id/passwordLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="Prijava"/>
+        android:text="@string/prijavaLogin"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

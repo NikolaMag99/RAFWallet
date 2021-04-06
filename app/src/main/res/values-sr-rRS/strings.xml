@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Projekat1</string>
     <string name="novcanikLoginTekst">Novcanik sistem za studente RAF-a</string>
     <string name="prijavaLogin">Prijava</string>
     <string name="unesite_sifru">Unesite sifru</string>

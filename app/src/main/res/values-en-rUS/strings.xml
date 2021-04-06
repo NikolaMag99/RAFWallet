@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="novcanikLoginTekst">Wallet system for RAF students</string>
+    <string name="prijavaLogin">Check-in</string>
+    <string name="unesite_sifru">Enter the code</string>
+    <string name="unesite_ime_banke">Enter the bank name</string>
+    <string name="unesite_prezime">Enter last name</string>
+    <string name="unesite_ime">Enter first name</string>
+</resources>
