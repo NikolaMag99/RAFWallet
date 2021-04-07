@@ -78,10 +78,6 @@
             android:layout_height="40dp"
             android:layout_marginLeft="60dp"
             android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:backgroundTint="#FFFFFF"
-            android:drawableTint="#FFFFFF"
-            android:foregroundTint="#FFFFFF"
             android:text="@string/razlika"
             android:textSize="20sp" />
         <TextView

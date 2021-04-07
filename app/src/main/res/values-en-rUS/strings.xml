@@ -17,4 +17,5 @@
     <string name="naslov">Title</string>
     <string name="prihod">Income</string>
     <string name="rashod">Expenses</string>
+    <string name="dodaj_u_listu">Add in lists</string>
 </resources>

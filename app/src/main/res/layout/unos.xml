@@ -20,7 +20,6 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:textColor="@color/black"
             android:textSize="20sp"
             android:layout_marginTop="-10dp"
             android:layout_gravity="center|top"
@@ -80,8 +79,28 @@
                 android:paddingTop="20dp"
                 android:paddingLeft="20dp"
                 android:hint="@string/opis"
-                android:inputType="text"
-                />
+                android:inputType="text"/>
+
+
+        <ImageView
+            android:id="@+id/btnMic"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="30dp"
+            style="@style/DarkAndLightTheme"
+            android:src="@drawable/ic_mic"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/btnRecording"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/ic_mic"
+            android:visibility="gone"
+            app:tint="@android:color/holo_red_light" />
 
         <Button
             android:id="@+id/dodajUListuBtn"
@@ -90,14 +109,9 @@
             android:layout_marginTop="30dp"
             android:layout_marginLeft="100dp"
             android:layout_gravity="left"
-            android:text="Dodaj u listu" />
+             android:text="@string/dodaj_u_listu"/>
 
     </LinearLayout>
-
-
-
-
-
 
 
 </LinearLayout>
