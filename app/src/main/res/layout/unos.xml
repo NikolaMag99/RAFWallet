@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/unosFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/podaciKorisnika"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginTop="-10dp"
+            android:layout_gravity="center|top"
+            android:text="Podaci o korisniku" />
+
+        <Spinner
+            android:id="@+id/aSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_gravity="left"
+            android:textColor="@color/black"
+            android:entries="@array/Spinner_items"/>
+
+        <EditText
+            android:id="@+id/naslov"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="40dp"
+            android:layout_gravity="left"
+            android:textSize="20sp"
+            android:hint="@string/naslov"
+            android:inputType="text"/>
+        <EditText
+            android:id="@+id/kolicina"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="40dp"
+            android:layout_gravity="left"
+            android:textSize="20sp"
+            android:hint="@string/kolicina"
+            android:inputType="text"/>
+
+        <CheckBox
+            android:id="@+id/audioCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="40dp"
+            android:layout_gravity="left"
+            android:textSize="20sp"
+            android:text="@string/audio"/>
+
+            <EditText
+                android:id="@+id/opis"
+                android:layout_width="250dp"
+                android:layout_height="180dp"
+                android:background="@drawable/border"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="40dp"
+                android:layout_gravity="left"
+                android:textSize="20sp"
+                android:gravity="top"
+                android:paddingTop="20dp"
+                android:paddingLeft="20dp"
+                android:hint="@string/opis"
+                android:inputType="text"
+                />
+
+        <Button
+            android:id="@+id/dodajUListuBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="100dp"
+            android:layout_gravity="left"
+            android:text="Dodaj u listu" />
+
+    </LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>

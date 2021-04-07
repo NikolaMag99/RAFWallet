@@ -19,8 +19,9 @@ public class PrihodViewModel extends ViewModel {
     private final ArrayList<Prihod> prihodiLista = new ArrayList<>();
     Prihod prihod;
 
+
     public PrihodViewModel() {
-        for(int i=0; i<=2; i++) {
+        for(int i=0; i<1; i++) {
             Prihod prihod = new Prihod(i, 1500,"Prihod", "Nesto");
             prihodiLista.add(prihod);
         }
@@ -34,9 +35,12 @@ public class PrihodViewModel extends ViewModel {
         return prihodi;
     }
 
-    public LiveData<Integer> getNovac() {
-        return novac;
-    }
+//    public LiveData<Integer> getNovac() {
+//        for(Prihod p: prihodi.getValue()){
+//            novac.setValue(novac.getValue() + p.getKolicina());
+//        }
+//        return novac;
+//    }
 
     public int getKolicina () {
         int kolicina = prihod.getKolicina();

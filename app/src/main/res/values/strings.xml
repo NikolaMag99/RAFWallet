@@ -13,4 +13,12 @@
     <string name="razlika">Razlika:</string>
     <string name="rashod">Rashod:</string>
     <string name="prihod">Prihod:</string>
+    <string name="naslov">Naslov</string>
+    <string name="kolicina">Kolicina</string>
+    <string name="audio">Audio</string>
+    <string name="opis">Opis</string>
+    <string-array name="Spinner_items">
+        <item>Prihod</item>
+        <item>Rashod</item>
+    </string-array>
 </resources>

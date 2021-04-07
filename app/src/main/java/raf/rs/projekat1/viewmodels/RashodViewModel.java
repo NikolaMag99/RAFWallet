@@ -21,8 +21,8 @@ public class RashodViewModel extends ViewModel {
     Rashod rashod;
 
     public RashodViewModel() {
-        for(int i=0; i<=2; i++) {
-            Rashod rashod1 = new Rashod(i, 1500,"Rashod", "Nesto");
+        for(int i=0; i<1; i++) {
+            Rashod rashod1 = new Rashod(i, 1000,"Rashod", "Nesto");
             rashodiLista.add(rashod1);
         }
 //        // ovo radimo zato sto cars.setValue u pozadini prvo proverava da li je pokazivac na objekat isti i ako jeste nece uraditi notifyAll
@@ -31,7 +31,7 @@ public class RashodViewModel extends ViewModel {
         rashodi.setValue(listToSubmit);
     }
 
-    public LiveData<List<Rashod>> getPrihodi() {
+    public LiveData<List<Rashod>> getRashodi() {
         return rashodi;
     }
 

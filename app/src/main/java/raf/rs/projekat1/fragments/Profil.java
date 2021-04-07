@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import raf.rs.projekat1.LoginActivity;
-import raf.rs.projekat1.MainActivity;
+import raf.rs.projekat1.EditProfil;
 import raf.rs.projekat1.R;
 
 public class Profil extends Fragment {
@@ -66,7 +66,7 @@ public class Profil extends Fragment {
         });
 
         promeni.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), MainActivity.class);
+            Intent intent = new Intent(getActivity(), EditProfil.class);
             startActivity(intent);
 
         });

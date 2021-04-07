@@ -10,4 +10,11 @@
     <string name="liste">Lists</string>
     <string name="unos">Add</string>
     <string name="stanje">Balance</string>
+    <string name="razlika">The difference</string>
+    <string name="opis">Description</string>
+    <string name="audio">Audio</string>
+    <string name="kolicina">Quantity</string>
+    <string name="naslov">Title</string>
+    <string name="prihod">Income</string>
+    <string name="rashod">Expenses</string>
 </resources>

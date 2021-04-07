@@ -10,4 +10,11 @@
     <string name="unos">Unos</string>
     <string name="liste">Liste</string>
     <string name="profil">Profil</string>
+    <string name="razlika">Razlika</string>
+    <string name="rashod">Rashod</string>
+    <string name="prihod">Prihod</string>
+    <string name="naslov">Naslov</string>
+    <string name="kolicina">Količina</string>
+    <string name="audio">Audio</string>
+    <string name="opis">Opis</string>
 </resources>

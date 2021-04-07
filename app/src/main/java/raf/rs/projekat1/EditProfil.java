@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import raf.rs.projekat1.fragments.Profil;
 
-public class MainActivity extends AppCompatActivity {
+public class EditProfil extends AppCompatActivity {
 
     private EditText ime;
     private EditText prezime;
@@ -43,7 +43,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void initListener() {
         izmeni.setOnClickListener(v -> {
-            izmeniUser();
+            if(ime.getText().toString().isEmpty() || prezime.getText().toString().isEmpty() || banka.getText().toString().isEmpty()){
+                Toast.makeText(this, "Popuni sva polja!", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                izmeniUser();
+            }
         });
     }
 

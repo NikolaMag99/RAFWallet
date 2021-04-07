@@ -10,7 +10,7 @@ import raf.rs.projekat1.R;
 public class Liste extends Fragment {
 
     public Liste() {
-        super(R.layout.stanje);
+        super(R.layout.activity_tabs);
     }
 
     @Override
