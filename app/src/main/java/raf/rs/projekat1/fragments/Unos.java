@@ -56,14 +56,7 @@ public class Unos extends Fragment  implements AdapterView.OnItemSelectedListene
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        if(hasPermissions(getActivity(), PERMISSIONS)) {
             init(view);
-            create();
-        }else {
-            // Ukoliko nije, trazimo ih
-            requestPermissions(PERMISSIONS, PERMISSION_ALL);
-        }
-
     }
 
     private boolean hasPermissions(Context context, String... permissions) {
@@ -91,11 +84,14 @@ public class Unos extends Fragment  implements AdapterView.OnItemSelectedListene
                 if (permissionsDenied.toString().length() == 0) {
                     // Ukoliko nema odbijenih dozvola, nastavljamo dalje
                     create();
+                    opis.setVisibility(View.GONE);
+                    mic.setVisibility(View.VISIBLE);
 
                 }else {
                     Toast.makeText(getActivity(), "Missing permissions! " + permissionsDenied.toString(), Toast.LENGTH_LONG).show();
                     // Ukoliko ima odbijenih dozvola ispisujemo poruku i zatvaramo activity
-                    getActivity().finish();
+                    checkBox.toggle();
+                    getActivity();
                 }
             }
         }
@@ -140,8 +136,14 @@ public class Unos extends Fragment  implements AdapterView.OnItemSelectedListene
         aSpinner.setOnItemSelectedListener(this);
         checkBox.setOnClickListener(v -> {
             if(checkBox.isChecked()){
-                opis.setVisibility(View.GONE);
-                mic.setVisibility(View.VISIBLE);
+                if(hasPermissions(getActivity(), PERMISSIONS)) {
+                    create();
+                    opis.setVisibility(View.GONE);
+                    mic.setVisibility(View.VISIBLE);
+                }else {
+                    // Ukoliko nije, trazimo ih
+                    requestPermissions(PERMISSIONS, PERMISSION_ALL);
+                }
 
             }else {
                 opis.setVisibility(View.VISIBLE);
