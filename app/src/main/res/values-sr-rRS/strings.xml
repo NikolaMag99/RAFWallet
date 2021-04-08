@@ -30,4 +30,16 @@
     <string name="ime_Main">Ime:</string>
     <string name="podaci_o_korisniku_Main">Podaci o korisniku</string>
     <string name="podaci_o_korisniku_Unos">Podaci o korisniku</string>
+    <string name="podaci_o_prihodu_rashodu">Podaci o prihodu/rashodu</string>
+    <string name="naslov_edit">Naslov</string>
+    <string name="kolicina_edit">Kolicina</string>
+    <string name="opis_edit">Opis</string>
+    <string name="odustani_edit">Odustani</string>
+    <string name="izmeni_edit">Izmeni</string>
+    <string name="opis_edit_ras_pri">Opis:</string>
+    <string name="naslov_podaci">Naslov:</string>
+    <string name="kolicina_podaci">Kolicina:</string>
+    <string name="opis_podaci">Opis:</string>
+    <string name="podaci_o_prihodu_rashodu_podaci">Podaci o prihodu/rashodu</string>
+    <string name="podaci_o_prihodu_rashodu_edit">Podaci o prihodu/rashodu</string>
 </resources>

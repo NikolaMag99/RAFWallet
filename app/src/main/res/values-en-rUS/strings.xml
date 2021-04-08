@@ -30,4 +30,16 @@
     <string name="izmeni_Main">Change</string>
     <string name="odjava_Main">Logout</string>
     <string name="podaci_o_korisniku_Unos">User data</string>
+    <string name="opis_edit_ras_pri">Description:</string>
+    <string name="izmeni_edit">Change</string>
+    <string name="odustani_edit">Cancel</string>
+    <string name="opis_edit">Description</string>
+    <string name="kolicina_edit">Quantity</string>
+    <string name="naslov_edit">Title</string>
+    <string name="podaci_o_prihodu_rashodu">Income and expenses data</string>
+    <string name="podaci_o_prihodu_rashodu_podaci">Income and expenses data</string>
+    <string name="podaci_o_prihodu_rashodu_edit">Income and expenses data</string>
+    <string name="naslov_podaci">Title:</string>
+    <string name="kolicina_podaci">Quantity:</string>
+    <string name="opis_podaci">Description:</string>
 </resources>

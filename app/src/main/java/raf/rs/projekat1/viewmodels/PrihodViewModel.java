@@ -12,7 +12,7 @@ import raf.rs.projekat1.models.Prihod;
 public class PrihodViewModel extends ViewModel {
 
 
-    public static int counter = 10;
+    public static int counter = 101;
 
     private final MutableLiveData<List<Prihod>> prihodi = new MutableLiveData<>();
     private final MutableLiveData<Integer> novac = new MutableLiveData<>();
@@ -21,7 +21,7 @@ public class PrihodViewModel extends ViewModel {
 
 
     public PrihodViewModel() {
-        for(int i=0; i<3; i++) {
+        for(int i=0; i<=3; i++) {
             Prihod prihod = new Prihod(i, 1500,"Prihod", "Nesto");
             prihodiLista.add(prihod);
         }

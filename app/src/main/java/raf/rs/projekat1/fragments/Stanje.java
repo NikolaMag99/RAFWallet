@@ -76,13 +76,13 @@ public class Stanje extends Fragment {
             if (zbir-zbirRashod > 0){
                 razlika.setTextColor(Color.GREEN);
                 razlika.setText(String.valueOf(zbir-zbirRashod));
-                zbir = 0;
-                zbirRashod = 0;
+//                zbir = 0;
+//                zbirRashod = 0;
             }else{
                 razlika.setTextColor(Color.RED);
                 razlika.setText(String.valueOf(zbir-zbirRashod));
-                zbir = 0;
-                zbirRashod = 0;
+//                zbir = 0;
+//                zbirRashod = 0;
             }
             Timber.e(String.valueOf(zbirRashod));
         });
