@@ -21,7 +21,6 @@
 
     <style name="TextViewStyle" parent="Theme.Projekat1">
         <item name="android:textColor">@color/black</item>
-        <item name="buttonStyle">@color/black</item>
     </style>
 
     <style name="FragmentTextStyle" parent="Theme.Projekat1">
@@ -36,7 +35,4 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="DarkAndLightTheme" parent="Theme.Projekat1">
-        <item name="tint">@color/black</item>
-    </style>
 </resources>

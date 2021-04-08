@@ -2,6 +2,7 @@ package raf.rs.projekat1.fragments;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.MediaRecorder;
 import android.os.Bundle;
@@ -21,6 +22,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModelProvider;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -28,6 +31,10 @@ import java.io.File;
 import java.io.IOException;
 
 import raf.rs.projekat1.R;
+import raf.rs.projekat1.models.Rashod;
+import raf.rs.projekat1.viewmodels.PrihodViewModel;
+import raf.rs.projekat1.viewmodels.RashodViewModel;
+import timber.log.Timber;
 
 public class Unos extends Fragment  implements AdapterView.OnItemSelectedListener {
 
@@ -46,6 +53,8 @@ public class Unos extends Fragment  implements AdapterView.OnItemSelectedListene
     private CheckBox checkBox;
     private ImageView mic;
     private ImageView micRecord;
+    private PrihodViewModel prihodViewModel;
+    private RashodViewModel rashodViewModel;
 
     public Unos() {
         super(R.layout.unos);
@@ -56,7 +65,9 @@ public class Unos extends Fragment  implements AdapterView.OnItemSelectedListene
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-            init(view);
+        prihodViewModel = new ViewModelProvider(requireActivity()).get(PrihodViewModel.class);
+        rashodViewModel = new ViewModelProvider(requireActivity()).get(RashodViewModel.class);
+        init(view);
     }
 
     private boolean hasPermissions(Context context, String... permissions) {
@@ -171,12 +182,17 @@ public class Unos extends Fragment  implements AdapterView.OnItemSelectedListene
                 mediaRecorder.release();
                 mediaRecorder = null;
         });
-    }
 
-
-    public void kliknuo() {
         dodaj.setOnClickListener(v -> {
+            if(aSpinner.getSelectedItem().toString().equals("Prihod")){
+                Timber.e("Kolicina " + kolicina.getText().toString() + "Naslov " + naslov.getText().toString() + "Opis " + opis.getText().toString());
+                prihodViewModel.addPrihod(Integer.parseInt(kolicina.getText().toString()), naslov.getText().toString(), opis.getText().toString());
+                Toast.makeText(getActivity(), "Dodat prihod u listu.", Toast.LENGTH_SHORT).show();
 
+            } else {
+                rashodViewModel.addRashod(Integer.parseInt(kolicina.getText().toString()), naslov.getText().toString(), opis.getText().toString());
+                Toast.makeText(getActivity(), "Dodat rashod u listu.", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 

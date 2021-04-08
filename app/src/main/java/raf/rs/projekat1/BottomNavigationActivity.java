@@ -29,6 +29,7 @@ public class BottomNavigationActivity extends AppCompatActivity {
     private void initViewPager() {
         viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(new PagerAdapter(getSupportFragmentManager()));
+        viewPager.setOffscreenPageLimit(3);
     }
 
     private void initNavigation() {

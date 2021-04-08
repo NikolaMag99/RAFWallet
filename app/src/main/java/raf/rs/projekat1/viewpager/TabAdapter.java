@@ -7,7 +7,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import raf.rs.projekat1.fragments.Liste;
+import raf.rs.projekat1.fragments.Prihodi;
 import raf.rs.projekat1.fragments.Profil;
+import raf.rs.projekat1.fragments.Rashodi;
 import raf.rs.projekat1.fragments.Stanje;
 import raf.rs.projekat1.fragments.Unos;
 
@@ -28,8 +30,8 @@ public class TabAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         Fragment fragment;
         switch (position) {
-            case FRAGMENT_1: fragment = new Liste(); break;
-            default: fragment = new Unos(); break;
+            case FRAGMENT_1: fragment = new Prihodi(); break;
+            default: fragment = new Rashodi(); break;
         }
         return fragment;
     }

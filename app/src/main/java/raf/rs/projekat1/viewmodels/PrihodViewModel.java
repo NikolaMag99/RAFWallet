@@ -21,7 +21,7 @@ public class PrihodViewModel extends ViewModel {
 
 
     public PrihodViewModel() {
-        for(int i=0; i<1; i++) {
+        for(int i=0; i<3; i++) {
             Prihod prihod = new Prihod(i, 1500,"Prihod", "Nesto");
             prihodiLista.add(prihod);
         }

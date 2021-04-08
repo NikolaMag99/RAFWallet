@@ -13,7 +13,7 @@ import raf.rs.projekat1.models.Rashod;
 public class RashodViewModel extends ViewModel {
 
 
-    public static int counter = 10;
+    public static int counter = 101;
 
     private final MutableLiveData<List<Rashod>> rashodi = new MutableLiveData<>();
     private final MutableLiveData<Integer> novac = new MutableLiveData<>();
@@ -45,14 +45,14 @@ public class RashodViewModel extends ViewModel {
     }
 
 
-    public void addPrihod(Integer kolicina, String naslov, String opis) {
+    public void addRashod(Integer kolicina, String naslov, String opis) {
         Rashod rashod = new Rashod(counter++, kolicina, naslov, opis);
         rashodiLista.add(rashod);
         ArrayList<Rashod> listToSubmit = new ArrayList<>(rashodiLista);
         rashodi.setValue(listToSubmit);
     }
 
-    public void removePrihod(Rashod rashod) {
+    public void removeRashod(Rashod rashod) {
         rashodiLista.remove(rashod);
         ArrayList<Rashod> listToSubmit = new ArrayList<>(rashodiLista);
         rashodi.setValue(listToSubmit);
