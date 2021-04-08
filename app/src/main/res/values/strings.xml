@@ -18,6 +18,18 @@
     <string name="audio">Audio</string>
     <string name="opis">Opis</string>
     <string name="dodaj_u_listu">Dodaj u listu</string>
+    <string name="podaci_o_korisniku">Podaci o korisniku</string>
+    <string name="ime">Ime:</string>
+    <string name="prezime">Prezime:</string>
+    <string name="banka">Banka:</string>
+    <string name="izmeni">Izmeni</string>
+    <string name="podaci_o_korisniku_Main">Podaci o korisniku</string>
+    <string name="ime_Main">Ime:</string>
+    <string name="prezime_Main">Prezime:</string>
+    <string name="banka_Main">Banka:</string>
+    <string name="izmeni_Main">Izmeni</string>
+    <string name="odjava_Main">Odjava</string>
+    <string name="podaci_o_korisniku_Unos">Podaci o korisniku</string>
     <string-array name="Spinner_items">
         <item>Prihod</item>
         <item>Rashod</item>

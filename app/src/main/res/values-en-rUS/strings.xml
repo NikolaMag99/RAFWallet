@@ -18,4 +18,16 @@
     <string name="prihod">Income</string>
     <string name="rashod">Expenses</string>
     <string name="dodaj_u_listu">Add in lists</string>
+    <string name="izmeni">Change</string>
+    <string name="banka">Bank:</string>
+    <string name="prezime">Surname:</string>
+    <string name="ime">Name:</string>
+    <string name="podaci_o_korisniku">User data</string>
+    <string name="podaci_o_korisniku_Main">User data</string>
+    <string name="ime_Main">Name:</string>
+    <string name="prezime_Main">Surname:</string>
+    <string name="banka_Main">Bank:</string>
+    <string name="izmeni_Main">Change</string>
+    <string name="odjava_Main">Logout</string>
+    <string name="podaci_o_korisniku_Unos">User data</string>
 </resources>

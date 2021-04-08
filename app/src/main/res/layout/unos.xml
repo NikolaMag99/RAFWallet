@@ -23,7 +23,7 @@
             android:textSize="20sp"
             android:layout_marginTop="-10dp"
             android:layout_gravity="center|top"
-            android:text="Podaci o korisniku" />
+            android:text="@string/podaci_o_korisniku_Unos" />
 
         <Spinner
             android:id="@+id/aSpinner"

@@ -185,13 +185,21 @@ public class Unos extends Fragment  implements AdapterView.OnItemSelectedListene
 
         dodaj.setOnClickListener(v -> {
             if(aSpinner.getSelectedItem().toString().equals("Prihod")){
-                Timber.e("Kolicina " + kolicina.getText().toString() + "Naslov " + naslov.getText().toString() + "Opis " + opis.getText().toString());
-                prihodViewModel.addPrihod(Integer.parseInt(kolicina.getText().toString()), naslov.getText().toString(), opis.getText().toString());
-                Toast.makeText(getActivity(), "Dodat prihod u listu.", Toast.LENGTH_SHORT).show();
+                if(kolicina.getText().toString().isEmpty() || naslov.getText().toString().isEmpty() || opis.getText().toString().isEmpty()){
+                    Toast.makeText(getActivity(),  "Popuni sva polja!", Toast.LENGTH_SHORT).show();
+                }else {
+                    prihodViewModel.addPrihod(Integer.parseInt(kolicina.getText().toString()), naslov.getText().toString(), opis.getText().toString());
+                    Toast.makeText(getActivity(), "Dodat prihod u listu.", Toast.LENGTH_SHORT).show();
+                }
 
             } else {
-                rashodViewModel.addRashod(Integer.parseInt(kolicina.getText().toString()), naslov.getText().toString(), opis.getText().toString());
-                Toast.makeText(getActivity(), "Dodat rashod u listu.", Toast.LENGTH_SHORT).show();
+                if(kolicina.getText().toString().isEmpty() || naslov.getText().toString().isEmpty() || opis.getText().toString().isEmpty()){
+                    Toast.makeText(getActivity(),  "Popuni sva polja!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    rashodViewModel.addRashod(Integer.parseInt(kolicina.getText().toString()), naslov.getText().toString(), opis.getText().toString());
+                    Toast.makeText(getActivity(), "Dodat rashod u listu.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

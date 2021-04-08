@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text="Podaci o korisniku" />
+            android:text="@string/podaci_o_korisniku" />
 
         <ImageView
             android:id="@+id/dolarSlika"
@@ -44,7 +44,7 @@
             android:layout_height="40dp"
             android:layout_marginLeft="60dp"
             android:textSize="20sp"
-            android:text="Ime:"/>
+            android:text="@string/ime"/>
         <EditText
             android:id="@+id/imeEdit"
             android:layout_width="0dp"
@@ -69,7 +69,7 @@
             android:layout_height="40dp"
             android:layout_marginLeft="60dp"
             android:textSize="20sp"
-            android:text="Prezime:"/>
+            android:text="@string/prezime"/>
         <EditText
             android:id="@+id/prezimeEdit"
             android:layout_width="0dp"
@@ -94,7 +94,7 @@
             android:layout_height="40dp"
             android:layout_marginLeft="60dp"
             android:textSize="20sp"
-            android:text="Banka:"/>
+            android:text="@string/banka"/>
         <EditText
             android:id="@+id/bankaEdit"
             android:layout_width="0dp"
@@ -114,7 +114,7 @@
             android:layout_marginRight="50dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="20dp"
-            android:text="Izmeni" />
+            android:text="@string/izmeni" />
 
 
 </LinearLayout>
