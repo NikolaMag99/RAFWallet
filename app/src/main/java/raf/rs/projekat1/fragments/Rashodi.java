@@ -1,5 +1,6 @@
 package raf.rs.projekat1.fragments;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,10 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import raf.rs.projekat1.EditPrihodaActivity;
+import raf.rs.projekat1.EditRashodaActivity;
+import raf.rs.projekat1.PrikazPrihodaActivity;
+import raf.rs.projekat1.PrikazRashodaActivity;
 import raf.rs.projekat1.R;
 import raf.rs.projekat1.adapter.RashodAdapter;
 import raf.rs.projekat1.differ.RashodDiffItemCallback;
@@ -68,7 +73,19 @@ public class Rashodi extends Fragment {
 
     private void initRecycler() {
         rashodAdapter = new RashodAdapter(new RashodDiffItemCallback(), rashod -> {
-            rashodViewModel.removeRashod(rashod);
+            int pozicija = rashod.getVrednost();
+            if(pozicija == 1) {
+                rashodViewModel.removeRashod(rashod);
+            } else if (pozicija == 2){
+                Intent intent = new Intent(getActivity(), EditRashodaActivity.class);
+                startActivity(intent);
+            }
+            else if (pozicija == 3){
+                Intent intent = new Intent(getActivity(), PrikazRashodaActivity.class);
+                intent.putExtra("rashod", rashod);
+                startActivity(intent);
+            }
+
             return null;
         });
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

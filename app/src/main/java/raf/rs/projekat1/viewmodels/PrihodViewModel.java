@@ -1,5 +1,7 @@
 package raf.rs.projekat1.viewmodels;
 
+import android.media.MediaRecorder;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -25,8 +27,7 @@ public class PrihodViewModel extends ViewModel {
             Prihod prihod = new Prihod(i, 1500,"Prihod", "Nesto");
             prihodiLista.add(prihod);
         }
-//        // ovo radimo zato sto cars.setValue u pozadini prvo proverava da li je pokazivac na objekat isti i ako jeste nece uraditi notifyAll
-//        // kreiranjem nove liste dobijamo novi pokazivac svaki put
+
         ArrayList<Prihod> listToSubmit = new ArrayList<>(prihodiLista);
         prihodi.setValue(listToSubmit);
     }
@@ -35,22 +36,15 @@ public class PrihodViewModel extends ViewModel {
         return prihodi;
     }
 
-//    public LiveData<Integer> getNovac() {
-//        for(Prihod p: prihodi.getValue()){
-//            novac.setValue(novac.getValue() + p.getKolicina());
-//        }
-//        return novac;
-//    }
-
+    
     public int getKolicina () {
         int kolicina = prihod.getKolicina();
         return kolicina;
     }
 
 
-    public void addPrihod(Integer kolicina, String naslov, String opis) {
-        Prihod prihod = new Prihod(counter++, kolicina, naslov, opis);
-        prihodiLista.add(prihod);
+    public void addPrihod(Prihod prihod1) {
+        prihodiLista.add(prihod1);
         ArrayList<Prihod> listToSubmit = new ArrayList<>(prihodiLista);
         prihodi.setValue(listToSubmit);
     }
@@ -60,5 +54,6 @@ public class PrihodViewModel extends ViewModel {
         ArrayList<Prihod> listToSubmit = new ArrayList<>(prihodiLista);
         prihodi.setValue(listToSubmit);
     }
+
 
 }

@@ -31,6 +31,7 @@ import java.io.File;
 import java.io.IOException;
 
 import raf.rs.projekat1.R;
+import raf.rs.projekat1.models.Prihod;
 import raf.rs.projekat1.models.Rashod;
 import raf.rs.projekat1.viewmodels.PrihodViewModel;
 import raf.rs.projekat1.viewmodels.RashodViewModel;
@@ -55,6 +56,7 @@ public class Unos extends Fragment  implements AdapterView.OnItemSelectedListene
     private ImageView micRecord;
     private PrihodViewModel prihodViewModel;
     private RashodViewModel rashodViewModel;
+    public static int counter = 1;
 
     public Unos() {
         super(R.layout.unos);
@@ -110,7 +112,7 @@ public class Unos extends Fragment  implements AdapterView.OnItemSelectedListene
     private void create() {
         File folder = new File(getActivity().getFilesDir(), "sounds");
         if(!folder.exists()) folder.mkdir();
-        file = new File(folder, "record.3gp");
+        file = new File(folder, counter + ".3gp");
     }
 
     private void init(View view) {
@@ -185,20 +187,34 @@ public class Unos extends Fragment  implements AdapterView.OnItemSelectedListene
 
         dodaj.setOnClickListener(v -> {
             if(aSpinner.getSelectedItem().toString().equals("Prihod")){
-                if(kolicina.getText().toString().isEmpty() || naslov.getText().toString().isEmpty() || opis.getText().toString().isEmpty()){
+                if(kolicina.getText().toString().isEmpty() || naslov.getText().toString().isEmpty()){
                     Toast.makeText(getActivity(),  "Popuni sva polja!", Toast.LENGTH_SHORT).show();
                 }else {
-                    prihodViewModel.addPrihod(Integer.parseInt(kolicina.getText().toString()), naslov.getText().toString(), opis.getText().toString());
-                    Toast.makeText(getActivity(), "Dodat prihod u listu.", Toast.LENGTH_SHORT).show();
+                    if(checkBox.isChecked()) {
+                        Prihod prihod = new Prihod(counter, Integer.parseInt(kolicina.getText().toString()), naslov.getText().toString(), file);
+                        prihodViewModel.addPrihod(prihod);
+                        Toast.makeText(getActivity(), "Dodat prihod u listu.", Toast.LENGTH_SHORT).show();
+                    }else {
+                        Prihod prihod = new Prihod(counter, Integer.parseInt(kolicina.getText().toString()), naslov.getText().toString(), opis.getText().toString());
+                        prihodViewModel.addPrihod(prihod);
+                        Toast.makeText(getActivity(), "Dodat prihod u listu.", Toast.LENGTH_SHORT).show();
+                    }
                 }
 
             } else {
-                if(kolicina.getText().toString().isEmpty() || naslov.getText().toString().isEmpty() || opis.getText().toString().isEmpty()){
+                if(kolicina.getText().toString().isEmpty() || naslov.getText().toString().isEmpty()){
                     Toast.makeText(getActivity(),  "Popuni sva polja!", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    rashodViewModel.addRashod(Integer.parseInt(kolicina.getText().toString()), naslov.getText().toString(), opis.getText().toString());
-                    Toast.makeText(getActivity(), "Dodat rashod u listu.", Toast.LENGTH_SHORT).show();
+                    if(checkBox.isChecked()) {
+                        Rashod rashod = new Rashod(counter, Integer.parseInt(kolicina.getText().toString()), naslov.getText().toString(), file);
+                        rashodViewModel.addRashod(rashod);
+                        Toast.makeText(getActivity(), "Dodat rashod u listu.", Toast.LENGTH_SHORT).show();
+                    }else {
+                        Rashod rashod = new Rashod(counter, Integer.parseInt(kolicina.getText().toString()), naslov.getText().toString(), opis.getText().toString());
+                        rashodViewModel.addRashod(rashod);
+                        Toast.makeText(getActivity(), "Dodat rashod u listu.", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });

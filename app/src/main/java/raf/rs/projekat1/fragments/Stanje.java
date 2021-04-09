@@ -29,8 +29,11 @@ public class Stanje extends Fragment {
     private TextView razlika;
     private PrihodViewModel prihodViewModel;
     private RashodViewModel rashodViewModel;
-    int zbir = 0;
     int zbirRashod = 0;
+    int zbir = 0;
+    int razlikaPrihod = 0;
+    int razlikaRashod= 0;
+
 
     public Stanje() {
         super(R.layout.stanje);
@@ -39,8 +42,8 @@ public class Stanje extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        prihodViewModel = new ViewModelProvider(this).get(PrihodViewModel.class);
-        rashodViewModel = new ViewModelProvider(this).get(RashodViewModel.class);
+        prihodViewModel = new ViewModelProvider(requireActivity()).get(PrihodViewModel.class);
+        rashodViewModel = new ViewModelProvider(requireActivity()).get(RashodViewModel.class);
         init(view);
     }
 
@@ -59,33 +62,107 @@ public class Stanje extends Fragment {
     }
 
     private void initObservers() {
+
         prihodViewModel.getPrihodi().observe(getViewLifecycleOwner(), prihodi -> {
+
             for(Prihod p: prihodi){
                 zbir += p.getKolicina();
             }
             prihod.setText(String.valueOf(zbir));
-            razlika.setText(String.valueOf(zbir));
-            Timber.e(String.valueOf(zbir));
-        });
+//            razlika.setText(String.valueOf(zbir));
+            razlikaPrihod = zbir;
+            rashodViewModel.getRashodi().observe(getViewLifecycleOwner(), rashodi -> {
 
+                for(Rashod r: rashodi){
+                    zbirRashod += r.getKolicina();
+                }
+                rashod.setText(String.valueOf(zbirRashod));
+                Timber.e(String.valueOf(razlikaPrihod));
+                razlikaRashod = zbirRashod;
+                zbir = 0;
+                zbirRashod = 0;
+
+
+            });
+            if(razlikaPrihod - razlikaRashod > 0){
+                razlika.setTextColor(Color.GREEN);
+                razlika.setText(String.valueOf(razlikaPrihod - razlikaRashod));
+                razlikaPrihod = 0;
+                razlikaRashod = 0;
+            } else {
+                razlika.setTextColor(Color.RED);
+                razlika.setText(String.valueOf(razlikaPrihod - razlikaRashod));
+                razlikaPrihod = 0;
+                razlikaRashod = 0;
+            }
+            zbir = 0;
+            zbirRashod = 0;
+
+        });
         rashodViewModel.getRashodi().observe(getViewLifecycleOwner(), rashodi -> {
+
             for(Rashod r: rashodi){
                 zbirRashod += r.getKolicina();
             }
             rashod.setText(String.valueOf(zbirRashod));
-            if (zbir-zbirRashod > 0){
+            Timber.e(String.valueOf(razlikaPrihod));
+            razlikaRashod = zbirRashod;
+            prihodViewModel.getPrihodi().observe(getViewLifecycleOwner(), prihodi -> {
+
+                for(Prihod p: prihodi){
+                    zbir += p.getKolicina();
+                }
+                prihod.setText(String.valueOf(zbir));
+//            razlika.setText(String.valueOf(zbir));
+                razlikaPrihod = zbir;
+                zbir = 0;
+                zbirRashod = 0;
+            });
+            if(razlikaPrihod - razlikaRashod > 0){
                 razlika.setTextColor(Color.GREEN);
-                razlika.setText(String.valueOf(zbir-zbirRashod));
-//                zbir = 0;
-//                zbirRashod = 0;
-            }else{
+                razlika.setText(String.valueOf(razlikaPrihod - razlikaRashod));
+                razlikaPrihod = 0;
+                razlikaRashod = 0;
+            } else if(razlikaPrihod - razlikaRashod < 0) {
                 razlika.setTextColor(Color.RED);
-                razlika.setText(String.valueOf(zbir-zbirRashod));
+                razlika.setText(String.valueOf(razlikaPrihod - razlikaRashod));
+                razlikaPrihod = 0;
+                razlikaRashod = 0;
+            }
+            else {
+                razlika.setTextColor(Color.BLACK);
+                razlika.setText(String.valueOf(razlikaPrihod - razlikaRashod));
+                razlikaPrihod = 0;
+                razlikaRashod = 0;
+
+            }
+            zbir = 0;
+            zbirRashod = 0;
+
+
+
+        });
+
+
+//        rashodViewModel.getRashodi().observe(getViewLifecycleOwner(), rashodi -> {
+//
+//            for(Rashod r: rashodi){
+//                zbirRashod += r.getKolicina();
+//            }
+//            rashod.setText(String.valueOf(zbirRashod));
+//            if (zbir-zbirRashod > 0){
+//                razlika.setTextColor(Color.GREEN);
+//                razlika.setText(String.valueOf(zbir-zbirRashod));
 //                zbir = 0;
 //                zbirRashod = 0;
-            }
-            Timber.e(String.valueOf(zbirRashod));
-        });
+//            }else{
+//                razlika.setTextColor(Color.RED);
+//                razlika.setText(String.valueOf(zbir-zbirRashod));
+//                zbir = 0;
+//                zbirRashod = 0;
+//            }
+//            Timber.e(String.valueOf(zbirRashod));
+//        });
 
     }
 

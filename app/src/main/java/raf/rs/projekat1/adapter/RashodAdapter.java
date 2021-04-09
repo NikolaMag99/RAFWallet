@@ -26,6 +26,7 @@ public class RashodAdapter extends ListAdapter<Rashod, RashodAdapter.ViewHolder>
 
     private final Function<Rashod, Void> onUserClicked;
     private RashodViewModel recyclerViewModel;
+    public int pozicija;
 
     public RashodAdapter(@NonNull DiffUtil.ItemCallback<Rashod> diffCallback, Function<Rashod, Void> onCarClicked) {
         super(diffCallback);
@@ -38,7 +39,7 @@ public class RashodAdapter extends ListAdapter<Rashod, RashodAdapter.ViewHolder>
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rashod_list_item,parent,false);
         return new ViewHolder(view,parent.getContext(), position -> {
             Rashod rashod = getItem(position);
-//            recyclerViewModel.removeUser(user);
+            rashod.setVrednost(pozicija);
             onUserClicked.apply(rashod);
             return null;
         });
@@ -61,6 +62,19 @@ public class RashodAdapter extends ListAdapter<Rashod, RashodAdapter.ViewHolder>
             itemView.findViewById(R.id.deleteRashod).setOnClickListener(user -> {
                 if(getAdapterPosition() != RecyclerView.NO_POSITION) {
                     onItemClicked.apply(getAdapterPosition());
+                    pozicija  =1;
+                }
+            });
+            itemView.findViewById(R.id.editRashod).setOnClickListener(user -> {
+                if(getAdapterPosition() != RecyclerView.NO_POSITION) {
+                    onItemClicked.apply(getAdapterPosition());
+                    pozicija  =2;
+                }
+            });
+            itemView.findViewById(R.id.rashodLista).setOnClickListener(user -> {
+                if(getAdapterPosition() != RecyclerView.NO_POSITION) {
+                    onItemClicked.apply(getAdapterPosition());
+                    pozicija  =3;
                 }
             });
         }

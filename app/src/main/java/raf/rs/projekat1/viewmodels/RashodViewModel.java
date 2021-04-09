@@ -45,8 +45,7 @@ public class RashodViewModel extends ViewModel {
     }
 
 
-    public void addRashod(Integer kolicina, String naslov, String opis) {
-        Rashod rashod = new Rashod(counter++, kolicina, naslov, opis);
+    public void addRashod(Rashod rashod) {
         rashodiLista.add(rashod);
         ArrayList<Rashod> listToSubmit = new ArrayList<>(rashodiLista);
         rashodi.setValue(listToSubmit);

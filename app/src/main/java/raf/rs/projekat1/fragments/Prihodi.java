@@ -1,5 +1,6 @@
 package raf.rs.projekat1.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -10,6 +11,9 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import raf.rs.projekat1.BottomNavigationActivity;
+import raf.rs.projekat1.EditPrihodaActivity;
+import raf.rs.projekat1.PrikazPrihodaActivity;
 import raf.rs.projekat1.R;
 import raf.rs.projekat1.adapter.PrihodAdapter;
 import raf.rs.projekat1.adapter.RashodAdapter;
@@ -57,7 +61,19 @@ public class Prihodi extends Fragment {
 
     private void initRecycler() {
         prihodAdapter = new PrihodAdapter(new PrihodDiffItemCallback(), prihod -> {
-            prihodViewModel.removePrihod(prihod);
+            int nekiID = prihod.getVrednost();
+            if(nekiID == 1){
+                prihodViewModel.removePrihod(prihod);
+            }
+            else if (nekiID == 2){
+                Intent intent = new Intent(getActivity(), EditPrihodaActivity.class);
+                startActivity(intent);
+            }
+            else  if (nekiID == 3){
+                Intent intent = new Intent(getActivity(), PrikazPrihodaActivity.class);
+                intent.putExtra("prihod", prihod);
+                startActivity(intent);
+            }
             return null;
         });
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

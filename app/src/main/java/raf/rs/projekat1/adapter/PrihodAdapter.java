@@ -24,6 +24,7 @@ public class PrihodAdapter extends ListAdapter<Prihod, PrihodAdapter.ViewHolder>
 
     private final Function<Prihod, Void> onUserClicked;
     private RashodViewModel recyclerViewModel;
+    public int nesto;
 
     public PrihodAdapter(@NonNull DiffUtil.ItemCallback<Prihod> diffCallback, Function<Prihod, Void> onCarClicked) {
         super(diffCallback);
@@ -36,7 +37,7 @@ public class PrihodAdapter extends ListAdapter<Prihod, PrihodAdapter.ViewHolder>
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.prihod_list_item,parent,false);
         return new ViewHolder(view,parent.getContext(), position -> {
             Prihod prihod = getItem(position);
-//            recyclerViewModel.removeUser(user);
+            prihod.setVrednost(nesto);
             onUserClicked.apply(prihod);
             return null;
         });
@@ -55,10 +56,28 @@ public class PrihodAdapter extends ListAdapter<Prihod, PrihodAdapter.ViewHolder>
         public ViewHolder(@NonNull View itemView, Context context, Function<Integer, Void> onItemClicked) {
             super(itemView);
             this.context = context;
+
+
             // TODO
             itemView.findViewById(R.id.deletePrihod).setOnClickListener(user -> {
                 if(getAdapterPosition() != RecyclerView.NO_POSITION) {
                     onItemClicked.apply(getAdapterPosition());
+                    nesto = 1;
+                }
+            });
+
+            itemView.findViewById(R.id.editPrihod).setOnClickListener(user -> {
+                if(getAdapterPosition() != RecyclerView.NO_POSITION) {
+                    onItemClicked.apply(getAdapterPosition());
+                    nesto = 2;
+
+                }
+            });
+
+            itemView.findViewById(R.id.prihodLista).setOnClickListener(user -> {
+                if(getAdapterPosition() != RecyclerView.NO_POSITION) {
+                    onItemClicked.apply(getAdapterPosition());
+                    nesto = 3;
                 }
             });
         }
