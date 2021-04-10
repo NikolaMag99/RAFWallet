@@ -42,8 +42,8 @@
 
     <ImageView
         android:id="@+id/deletePrihod"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
         android:layout_marginRight="20dp"
         android:src="@drawable/delete"
         app:tint="@color/black"
@@ -54,8 +54,8 @@
 
     <ImageView
         android:id="@+id/editPrihod"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
         android:src="@drawable/edit"
         app:tint="@color/black"
         android:layout_marginRight="20dp"

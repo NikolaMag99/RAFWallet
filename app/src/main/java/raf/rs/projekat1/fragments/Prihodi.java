@@ -61,19 +61,20 @@ public class Prihodi extends Fragment {
 
     private void initRecycler() {
         prihodAdapter = new PrihodAdapter(new PrihodDiffItemCallback(), prihod -> {
-            int nekiID = prihod.getVrednost();
-            if(nekiID == 1){
-                prihodViewModel.removePrihod(prihod);
-            }
-            else if (nekiID == 2){
-                Intent intent = new Intent(getActivity(), EditPrihodaActivity.class);
-                startActivity(intent);
-            }
-            else  if (nekiID == 3){
-                Intent intent = new Intent(getActivity(), PrikazPrihodaActivity.class);
-                intent.putExtra("prihod", prihod);
-                startActivity(intent);
-            }
+
+            prihodViewModel.removePrihod(prihod);
+            return null;
+
+        }, edit -> {
+            Intent intent = new Intent(getActivity(), EditPrihodaActivity.class);
+            startActivity(intent);
+            return null;
+
+        }, view -> {
+
+            Intent intent = new Intent(getActivity(), PrikazPrihodaActivity.class);
+            intent.putExtra("prihod", view);
+            startActivity(intent);
             return null;
         });
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

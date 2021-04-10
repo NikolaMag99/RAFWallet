@@ -80,7 +80,7 @@ public class PrikazRashodaActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Rashod rashod = (Rashod) intent.getExtras().getSerializable("rashod");
 
-            play.setOnClickListener(v -> play());
+        play.setOnClickListener(v -> play());
 
         pause.setOnClickListener(v -> pause());
         naslov.setText(rashod.getNaslov());

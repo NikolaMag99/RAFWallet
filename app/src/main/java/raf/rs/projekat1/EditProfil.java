@@ -3,6 +3,7 @@ package raf.rs.projekat1;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -20,6 +21,7 @@ public class EditProfil extends AppCompatActivity {
     private EditText banka;
     private Button izmeni;
     private boolean messageWritten = false;
+    public static final int PREFERENCE_WRITE_REQUEST_CODE = 222;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,11 +62,13 @@ public class EditProfil extends AppCompatActivity {
                 .putString(LoginActivity.PREF_MESSAGE_KEY2, prezime.getText().toString())
                 .putString(LoginActivity.PREF_MESSAGE_KEY3, banka.getText().toString())
                 .apply();
-        messageWritten = true;
-        if (messageWritten){
-            Intent intent = new Intent(this, BottomNavigationActivity.class);
-            startActivity(intent);
-
-        }
+        setResult(Activity.RESULT_OK);
+        finish();
+//        messageWritten = true;
+//        if (messageWritten){
+//            Intent intent = new Intent(this, BottomNavigationActivity.class);
+//            startActivityForResult(intent, PREFERENCE_WRITE_REQUEST_CODE);
+//
+//        }
     }
 }

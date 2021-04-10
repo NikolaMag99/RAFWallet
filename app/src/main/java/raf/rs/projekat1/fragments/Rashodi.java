@@ -73,19 +73,17 @@ public class Rashodi extends Fragment {
 
     private void initRecycler() {
         rashodAdapter = new RashodAdapter(new RashodDiffItemCallback(), rashod -> {
-            int pozicija = rashod.getVrednost();
-            if(pozicija == 1) {
-                rashodViewModel.removeRashod(rashod);
-            } else if (pozicija == 2){
-                Intent intent = new Intent(getActivity(), EditRashodaActivity.class);
-                startActivity(intent);
-            }
-            else if (pozicija == 3){
-                Intent intent = new Intent(getActivity(), PrikazRashodaActivity.class);
-                intent.putExtra("rashod", rashod);
-                startActivity(intent);
-            }
 
+            rashodViewModel.removeRashod(rashod);
+            return null;
+        }, eidt -> {
+            Intent intent = new Intent(getActivity(), EditRashodaActivity.class);
+            startActivity(intent);
+            return null;
+        }, view -> {
+            Intent intent = new Intent(getActivity(), PrikazRashodaActivity.class);
+            intent.putExtra("rashod", view);
+            startActivity(intent);
             return null;
         });
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

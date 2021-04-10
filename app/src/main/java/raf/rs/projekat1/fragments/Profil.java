@@ -1,5 +1,6 @@
 package raf.rs.projekat1.fragments;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -25,6 +26,7 @@ public class Profil extends Fragment {
     private Button odjava;
     private Button promeni;
     private boolean messageWritten = false;
+    public static final int PREFERENCE_WRITE_REQUEST_CODE = 222;
 
     public Profil() {
         super(R.layout.profil);
@@ -67,11 +69,23 @@ public class Profil extends Fragment {
 
         promeni.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), EditProfil.class);
-            startActivity(intent);
+            startActivityForResult(intent, PREFERENCE_WRITE_REQUEST_CODE);
 
         });
 
     }
 
-
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PREFERENCE_WRITE_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences(this.getActivity().getPackageName(), Context.MODE_PRIVATE);
+            String message1 = sharedPreferences.getString(LoginActivity.PREF_MESSAGE_KEY, null);
+            String message2 = sharedPreferences.getString(LoginActivity.PREF_MESSAGE_KEY2, null);
+            String message3 = sharedPreferences.getString(LoginActivity.PREF_MESSAGE_KEY3, null);
+            ime.setText(message1);
+            prezime.setText(message2);
+            banka.setText(message3);
+        }
+    }
 }

@@ -21,7 +21,7 @@ public class RashodViewModel extends ViewModel {
     Rashod rashod;
 
     public RashodViewModel() {
-        for(int i=0; i<1; i++) {
+        for(int i=0; i<=2; i++) {
             Rashod rashod1 = new Rashod(i, 1000,"Rashod", "Nesto");
             rashodiLista.add(rashod1);
         }

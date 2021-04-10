@@ -23,12 +23,16 @@ public class PrihodAdapter extends ListAdapter<Prihod, PrihodAdapter.ViewHolder>
 
 
     private final Function<Prihod, Void> onUserClicked;
+    private final Function<Prihod, Void> onViewClicked;
+    private final Function<Prihod, Void> onEditClicked;
     private RashodViewModel recyclerViewModel;
-    public int nesto;
 
-    public PrihodAdapter(@NonNull DiffUtil.ItemCallback<Prihod> diffCallback, Function<Prihod, Void> onCarClicked) {
+    public PrihodAdapter(@NonNull DiffUtil.ItemCallback<Prihod> diffCallback, Function<Prihod, Void> onCarClicked, Function<Prihod, Void> onViewClicked,
+                         Function<Prihod, Void> onEditClicked ) {
         super(diffCallback);
         this.onUserClicked = onCarClicked;
+        this.onEditClicked = onEditClicked;
+        this.onViewClicked = onViewClicked;
     }
 
     @NonNull
@@ -37,8 +41,15 @@ public class PrihodAdapter extends ListAdapter<Prihod, PrihodAdapter.ViewHolder>
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.prihod_list_item,parent,false);
         return new ViewHolder(view,parent.getContext(), position -> {
             Prihod prihod = getItem(position);
-            prihod.setVrednost(nesto);
             onUserClicked.apply(prihod);
+            return null;
+        },position -> {
+            Prihod prihod = getItem(position);
+            onViewClicked.apply(prihod);
+            return null;
+        },position -> {
+            Prihod prihod = getItem(position);
+            onEditClicked.apply(prihod);
             return null;
         });
     }
@@ -53,31 +64,27 @@ public class PrihodAdapter extends ListAdapter<Prihod, PrihodAdapter.ViewHolder>
     public class ViewHolder extends RecyclerView.ViewHolder {
         private Context context;
 
-        public ViewHolder(@NonNull View itemView, Context context, Function<Integer, Void> onItemClicked) {
+        public ViewHolder(@NonNull View itemView, Context context, Function<Integer, Void> onItemClicked, Function<Integer, Void> onEditClicked,
+                          Function<Integer, Void> onViewClicked) {
             super(itemView);
             this.context = context;
 
 
-            // TODO
             itemView.findViewById(R.id.deletePrihod).setOnClickListener(user -> {
                 if(getAdapterPosition() != RecyclerView.NO_POSITION) {
                     onItemClicked.apply(getAdapterPosition());
-                    nesto = 1;
-                }
-            });
-
-            itemView.findViewById(R.id.editPrihod).setOnClickListener(user -> {
-                if(getAdapterPosition() != RecyclerView.NO_POSITION) {
-                    onItemClicked.apply(getAdapterPosition());
-                    nesto = 2;
-
                 }
             });
 
             itemView.findViewById(R.id.prihodLista).setOnClickListener(user -> {
                 if(getAdapterPosition() != RecyclerView.NO_POSITION) {
-                    onItemClicked.apply(getAdapterPosition());
-                    nesto = 3;
+                    onViewClicked.apply(getAdapterPosition());
+                }
+            });
+
+            itemView.findViewById(R.id.editPrihod).setOnClickListener(user -> {
+                if(getAdapterPosition() != RecyclerView.NO_POSITION) {
+                    onEditClicked.apply(getAdapterPosition());
                 }
             });
         }

@@ -28,7 +28,6 @@ public class PrikazPrihodaActivity extends AppCompatActivity {
     private TextView opis;
     private ImageView play;
     private ImageView pause;
-    private Unos unos;
 
 
     private MediaPlayer mediaPlayer;
