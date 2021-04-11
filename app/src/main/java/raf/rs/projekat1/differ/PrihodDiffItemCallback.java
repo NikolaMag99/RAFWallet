@@ -16,8 +16,7 @@ public class PrihodDiffItemCallback extends DiffUtil.ItemCallback<Prihod> {
     @Override
     public boolean areContentsTheSame(@NonNull Prihod oldItem, @NonNull Prihod newItem) {
         return oldItem.getKolicina() == (newItem.getKolicina()) &&
-                oldItem.getNaslov().equals(newItem.getNaslov()) &&
-                oldItem.getOpis().equals(newItem.getOpis());
+                oldItem.getNaslov().equals(newItem.getNaslov());
     }
 
 }

@@ -13,7 +13,7 @@
 <!--    </solid>-->
     <stroke
         android:width="2dp"
-        android:color="#969696" >
+        android:color="#00FF00" >
     </stroke>
 
     <!-- The radius makes the corners rounded -->

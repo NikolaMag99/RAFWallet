@@ -95,7 +95,6 @@ public class PrihodAdapter extends ListAdapter<Prihod, PrihodAdapter.ViewHolder>
             ((TextView)itemView.findViewById(R.id.naslovPrihod)).setText(rashod.getNaslov());
             ((TextView)itemView.findViewById(R.id.kolicinaPrihod)).setText(Integer.toString(rashod.getKolicina()));
             ImageView imageDelete = itemView.findViewById(R.id.deletePrihod);
-            imageDelete.setColorFilter(Color.BLACK);
             ImageView imageEdit = itemView.findViewById(R.id.editPrihod);
 
         }

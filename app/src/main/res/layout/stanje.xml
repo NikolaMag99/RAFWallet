@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <TextView
-        style="@style/FragmentTextStyle"
+        style="@style/TextViewStyle"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -73,6 +73,7 @@
         android:orientation="horizontal">
 
         <TextView
+            style="@style/TextViewStyle"
             android:id="@+id/razlika"
             android:layout_width="0dp"
             android:layout_height="40dp"

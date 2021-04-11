@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    style="@style/TextViewStyle">
 
 
 
@@ -19,6 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         />
     <TextView
+        style="@style/TextViewStyle"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/imageLogin"

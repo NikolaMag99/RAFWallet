@@ -7,6 +7,8 @@ import android.content.pm.PackageManager;
 import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
@@ -194,10 +196,18 @@ public class Unos extends Fragment  implements AdapterView.OnItemSelectedListene
                         Prihod prihod = new Prihod(counter, Integer.parseInt(kolicina.getText().toString()), naslov.getText().toString(), file);
                         prihodViewModel.addPrihod(prihod);
                         Toast.makeText(getActivity(), "Dodat prihod u listu.", Toast.LENGTH_SHORT).show();
+                        naslov.getText().clear();
+                        kolicina.getText().clear();
+                        checkBox.toggle();
+                        opis.setVisibility(View.VISIBLE);
+                        mic.setVisibility(View.GONE);
                     }else {
                         Prihod prihod = new Prihod(counter, Integer.parseInt(kolicina.getText().toString()), naslov.getText().toString(), opis.getText().toString());
                         prihodViewModel.addPrihod(prihod);
                         Toast.makeText(getActivity(), "Dodat prihod u listu.", Toast.LENGTH_SHORT).show();
+                        naslov.getText().clear();
+                        kolicina.getText().clear();
+                        opis.getText().clear();
                     }
                 }
 
@@ -210,10 +220,18 @@ public class Unos extends Fragment  implements AdapterView.OnItemSelectedListene
                         Rashod rashod = new Rashod(counter, Integer.parseInt(kolicina.getText().toString()), naslov.getText().toString(), file);
                         rashodViewModel.addRashod(rashod);
                         Toast.makeText(getActivity(), "Dodat rashod u listu.", Toast.LENGTH_SHORT).show();
+                        naslov.getText().clear();
+                        kolicina.getText().clear();
+                        checkBox.toggle();
+                        opis.setVisibility(View.VISIBLE);
+                        mic.setVisibility(View.GONE);
                     }else {
                         Rashod rashod = new Rashod(counter, Integer.parseInt(kolicina.getText().toString()), naslov.getText().toString(), opis.getText().toString());
                         rashodViewModel.addRashod(rashod);
                         Toast.makeText(getActivity(), "Dodat rashod u listu.", Toast.LENGTH_SHORT).show();
+                        naslov.getText().clear();
+                        kolicina.getText().clear();
+                        opis.getText().clear();
                     }
                 }
             }

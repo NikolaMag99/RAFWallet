@@ -6,7 +6,7 @@
     android:layout_marginTop="10dp"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
-    android:background="@drawable/border"
+    android:background="@drawable/border_red"
     android:id="@+id/rashodLista"
     >
 
@@ -22,6 +22,7 @@
         />
 
     <TextView
+        style="@style/TextViewStyle"
         android:id="@+id/naslovRashod"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,6 +33,7 @@
         android:textStyle="bold"/>
 
     <TextView
+        style="@style/TextViewStyle"
         android:id="@+id/kolicinaRashod"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -44,9 +46,9 @@
         android:id="@+id/deleteRashod"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@drawable/delete"
+        style="@style/ImageViewStyle"
         android:layout_marginRight="20dp"
-        android:background="@drawable/delete"
-        app:tint="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/editRashod"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -56,8 +58,8 @@
         android:id="@+id/editRashod"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/edit"
-        app:tint="@color/black"
+        android:src="@drawable/edit"
+        style="@style/ImageViewStyle"
         android:layout_marginRight="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

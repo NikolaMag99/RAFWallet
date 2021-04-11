@@ -15,6 +15,7 @@
         android:gravity="center"
         android:orientation="vertical">
         <TextView
+            style="@style/TextViewStyle"
             android:id="@+id/podaciKorisnika"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -22,6 +23,7 @@
             android:text="@string/podaci_o_korisniku_Main" />
 
         <ImageView
+            style="@style/ImageViewStyle"
             android:id="@+id/dolarSlika"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -39,6 +41,7 @@
         android:gravity="center"
         android:orientation="horizontal">
         <TextView
+            style="@style/TextViewStyle"
             android:id="@+id/ime"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -47,6 +50,7 @@
             android:textSize="20sp"
             android:text="@string/ime_Main"/>
         <TextView
+            style="@style/TextViewStyle"
             android:id="@+id/ImeSaLogin"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -63,6 +67,7 @@
         android:gravity="center"
         android:orientation="horizontal">
         <TextView
+            style="@style/TextViewStyle"
             android:id="@+id/prezime"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -71,6 +76,7 @@
             android:textSize="20sp"
             android:text="@string/prezime_Main"/>
         <TextView
+            style="@style/TextViewStyle"
             android:id="@+id/PrezimeSaLogin"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -87,6 +93,7 @@
         android:gravity="center"
         android:orientation="horizontal">
         <TextView
+            style="@style/TextViewStyle"
             android:id="@+id/banka"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -95,6 +102,7 @@
             android:textSize="20sp"
             android:text="@string/banka_Main"/>
         <TextView
+            style="@style/TextViewStyle"
             android:id="@+id/BankaSaLogin"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -130,8 +138,5 @@
             android:layout_marginTop="5dp"
             android:text="@string/odjava_Main" />
     </LinearLayout>
-
-
-
 
 </LinearLayout>

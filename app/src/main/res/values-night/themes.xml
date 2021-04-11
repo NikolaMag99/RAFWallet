@@ -17,7 +17,21 @@
 
     <style name="TextViewStyle" parent="Theme.Projekat1">
         <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">23sp</item>
     </style>
+
+    <style name="ImageViewStyle" parent="Theme.Projekat1">
+        <item name="tint">@color/white</item>
+    </style>
+
+
+    <style name="BorderStyle" parent="Theme.Projekat1">
+        <item name="background">@drawable/border_green</item>
+    </style>
+
+    <!--    <style name="ImageDolarGreen" parent="Theme.Projekat1">-->
+    <!--        <item name="tint"></item>-->
+    <!--    </style>-->
 
     <style name="FragmentTextStyle" parent="Theme.Projekat1">
         <item name="android:textSize">24sp</item>
@@ -25,7 +39,8 @@
     </style>
 
     <style name="BotomNav" parent="Theme.Projekat1">
-        <item name="background">@drawable/border</item>
+        <item name="background">@drawable/border_green</item>
+
         <item name="colorButtonNormal">#DA0303</item>
         <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/white</item>

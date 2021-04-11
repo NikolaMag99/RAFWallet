@@ -16,8 +16,7 @@ public class RashodDiffItemCallback extends DiffUtil.ItemCallback<Rashod> {
     @Override
     public boolean areContentsTheSame(@NonNull Rashod oldItem, @NonNull Rashod newItem) {
         return oldItem.getKolicina() == (newItem.getKolicina()) &&
-                oldItem.getNaslov().equals(newItem.getNaslov()) &&
-                oldItem.getOpis().equals(newItem.getOpis());
+                oldItem.getNaslov().equals(newItem.getNaslov());
     }
 
 }

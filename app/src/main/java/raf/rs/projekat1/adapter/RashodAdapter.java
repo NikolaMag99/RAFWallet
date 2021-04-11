@@ -97,7 +97,6 @@ public class RashodAdapter extends ListAdapter<Rashod, RashodAdapter.ViewHolder>
             ((TextView)itemView.findViewById(R.id.naslovRashod)).setText(rashod.getNaslov());
             ((TextView)itemView.findViewById(R.id.kolicinaRashod)).setText(Integer.toString(rashod.getKolicina()));
             ImageView imageDelete = itemView.findViewById(R.id.deleteRashod);
-            imageDelete.setColorFilter(Color.BLACK);
             ImageView imageEdit = itemView.findViewById(R.id.editRashod);
 
         }

@@ -6,7 +6,7 @@
     android:layout_marginTop="10dp"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
-    android:background="@drawable/border"
+    android:background="@drawable/border_green"
     android:id="@+id/prihodLista"
     >
 
@@ -22,6 +22,7 @@
         />
 
     <TextView
+        style="@style/TextViewStyle"
         android:id="@+id/naslovPrihod"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,6 +33,7 @@
         android:textStyle="bold"/>
 
     <TextView
+        style="@style/TextViewStyle"
         android:id="@+id/kolicinaPrihod"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,7 +48,7 @@
         android:layout_height="40dp"
         android:layout_marginRight="20dp"
         android:src="@drawable/delete"
-        app:tint="@color/black"
+        style="@style/ImageViewStyle"
         app:layout_constraintBottom_toTopOf="@+id/editPrihod"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -57,7 +59,7 @@
         android:layout_width="30dp"
         android:layout_height="40dp"
         android:src="@drawable/edit"
-        app:tint="@color/black"
+        style="@style/ImageViewStyle"
         android:layout_marginRight="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
