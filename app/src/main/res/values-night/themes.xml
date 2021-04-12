@@ -38,6 +38,11 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
+    <style name="PrihodRashodText" parent="Theme.Projekat1">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
     <style name="BotomNav" parent="Theme.Projekat1">
         <item name="background">@drawable/border_green</item>
 
