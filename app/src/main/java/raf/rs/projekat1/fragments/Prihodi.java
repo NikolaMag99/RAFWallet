@@ -12,17 +12,13 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import raf.rs.projekat1.BottomNavigationActivity;
 import raf.rs.projekat1.EditPrihodaActivity;
 import raf.rs.projekat1.PrikazPrihodaActivity;
 import raf.rs.projekat1.R;
 import raf.rs.projekat1.adapter.PrihodAdapter;
-import raf.rs.projekat1.adapter.RashodAdapter;
 import raf.rs.projekat1.differ.PrihodDiffItemCallback;
-import raf.rs.projekat1.differ.RashodDiffItemCallback;
 import raf.rs.projekat1.models.Prihod;
 import raf.rs.projekat1.viewmodels.PrihodViewModel;
-import raf.rs.projekat1.viewmodels.RashodViewModel;
 
 public class Prihodi extends Fragment {
 
@@ -96,7 +92,7 @@ public class Prihodi extends Fragment {
             Prihod newPrihod = (Prihod)data.getSerializableExtra("NEW");
 //            prihodViewModel.removePrihod(old);
 //            prihodViewModel.addPrihod(newPrihod);
-            prihodViewModel.newPrihod(old,newPrihod);
+            prihodViewModel.editPrihod(old,newPrihod);
             prihodAdapter.notifyDataSetChanged();
             return;
         }

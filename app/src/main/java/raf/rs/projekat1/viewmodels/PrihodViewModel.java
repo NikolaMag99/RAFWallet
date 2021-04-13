@@ -55,7 +55,7 @@ public class PrihodViewModel extends ViewModel {
         prihodi.setValue(listToSubmit);
     }
 
-    public void newPrihod(Prihod old, Prihod newPrihod) {
+    public void editPrihod(Prihod old, Prihod newPrihod) {
         for (Prihod p: prihodiLista){
             if(p.getId() == old.getId()) {
                 p.setKolicina(newPrihod.getKolicina());

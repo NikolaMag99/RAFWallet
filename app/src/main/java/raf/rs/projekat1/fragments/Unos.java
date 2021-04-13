@@ -58,7 +58,7 @@ public class Unos extends Fragment  implements AdapterView.OnItemSelectedListene
     private ImageView micRecord;
     private PrihodViewModel prihodViewModel;
     private RashodViewModel rashodViewModel;
-    public static int counter = 1;
+    public static int counter = 10;
 
     public Unos() {
         super(R.layout.unos);
@@ -201,6 +201,7 @@ public class Unos extends Fragment  implements AdapterView.OnItemSelectedListene
                         checkBox.toggle();
                         opis.setVisibility(View.VISIBLE);
                         mic.setVisibility(View.GONE);
+                        counter++;
                     }else {
                         Prihod prihod = new Prihod(counter, Integer.parseInt(kolicina.getText().toString()), naslov.getText().toString(), opis.getText().toString());
                         prihodViewModel.addPrihod(prihod);
@@ -208,6 +209,7 @@ public class Unos extends Fragment  implements AdapterView.OnItemSelectedListene
                         naslov.getText().clear();
                         kolicina.getText().clear();
                         opis.getText().clear();
+                        counter++;
                     }
                 }
 
@@ -225,6 +227,7 @@ public class Unos extends Fragment  implements AdapterView.OnItemSelectedListene
                         checkBox.toggle();
                         opis.setVisibility(View.VISIBLE);
                         mic.setVisibility(View.GONE);
+                        counter++;
                     }else {
                         Rashod rashod = new Rashod(counter, Integer.parseInt(kolicina.getText().toString()), naslov.getText().toString(), opis.getText().toString());
                         rashodViewModel.addRashod(rashod);
@@ -232,6 +235,7 @@ public class Unos extends Fragment  implements AdapterView.OnItemSelectedListene
                         naslov.getText().clear();
                         kolicina.getText().clear();
                         opis.getText().clear();
+                        counter++;
                     }
                 }
             }

@@ -2,7 +2,6 @@ package raf.rs.projekat1.fragments;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,21 +11,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import raf.rs.projekat1.EditPrihodaActivity;
 import raf.rs.projekat1.EditRashodaActivity;
-import raf.rs.projekat1.PrikazPrihodaActivity;
 import raf.rs.projekat1.PrikazRashodaActivity;
 import raf.rs.projekat1.R;
 import raf.rs.projekat1.adapter.RashodAdapter;
 import raf.rs.projekat1.differ.RashodDiffItemCallback;
-import raf.rs.projekat1.models.Prihod;
 import raf.rs.projekat1.models.Rashod;
 import raf.rs.projekat1.viewmodels.RashodViewModel;
-import timber.log.Timber;
 
 public class Rashodi extends Fragment {
 
@@ -105,7 +99,7 @@ public class Rashodi extends Fragment {
             Rashod newRashod = (Rashod)data.getSerializableExtra("NEW");
 //            prihodViewModel.removePrihod(old);
 //            prihodViewModel.addPrihod(newPrihod);
-            rashodViewModel.newRashod(old,newRashod);
+            rashodViewModel.editRashod(old,newRashod);
             rashodAdapter.notifyDataSetChanged();
             return;
         }

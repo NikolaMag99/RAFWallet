@@ -50,6 +50,7 @@ public class RashodViewModel extends ViewModel {
         rashodiLista.add(rashod);
         ArrayList<Rashod> listToSubmit = new ArrayList<>(rashodiLista);
         rashodi.setValue(listToSubmit);
+//        counter++;
     }
 
     public void removeRashod(Rashod rashod) {
@@ -58,7 +59,7 @@ public class RashodViewModel extends ViewModel {
         rashodi.setValue(listToSubmit);
     }
 
-    public void newRashod(Rashod old, Rashod newRashod) {
+    public void editRashod(Rashod old, Rashod newRashod) {
         for (Rashod p: rashodiLista){
             if(p.getId() == old.getId()) {
                 p.setKolicina(newRashod.getKolicina());
