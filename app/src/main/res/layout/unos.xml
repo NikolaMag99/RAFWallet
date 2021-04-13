@@ -22,7 +22,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:textSize="20sp"
-            android:layout_marginTop="-10dp"
             android:layout_gravity="center|top"
             android:text="@string/podaci_o_korisniku_Unos" />
 
@@ -31,7 +30,7 @@
             android:id="@+id/aSpinner"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:layout_marginLeft="40dp"
             android:layout_gravity="left"
             android:entries="@array/Spinner_items"/>
@@ -41,7 +40,7 @@
             android:id="@+id/naslov"
             android:layout_width="250dp"
             android:layout_height="40dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginLeft="40dp"
             android:layout_gravity="left"
             android:textSize="20sp"
@@ -52,7 +51,7 @@
             android:id="@+id/kolicina"
             android:layout_width="250dp"
             android:layout_height="40dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginLeft="40dp"
             android:layout_gravity="left"
             android:textSize="20sp"
@@ -64,7 +63,7 @@
             android:id="@+id/audioCheck"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginLeft="40dp"
             android:layout_gravity="left"
             android:textSize="20sp"
@@ -76,7 +75,7 @@
                 android:layout_width="250dp"
                 android:layout_height="180dp"
                 android:background="@drawable/border"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginLeft="40dp"
                 android:layout_gravity="left"
                 android:textSize="20sp"
@@ -102,7 +101,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginBottom="50dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:src="@drawable/ic_mic"
             android:visibility="gone"
             app:tint="@android:color/holo_red_light" />
@@ -111,9 +110,8 @@
             android:id="@+id/dodajUListuBtn"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="100dp"
-            android:layout_gravity="left"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
              android:text="@string/dodaj_u_listu"/>
 
     </LinearLayout>

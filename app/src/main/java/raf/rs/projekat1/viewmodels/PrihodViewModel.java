@@ -60,7 +60,11 @@ public class PrihodViewModel extends ViewModel {
             if(p.getId() == old.getId()) {
                 p.setKolicina(newPrihod.getKolicina());
                 p.setNaslov(newPrihod.getNaslov());
-                p.setOpis(newPrihod.getOpis());
+                if(newPrihod.getFile() != null) {
+                    p.setFile(newPrihod.getFile());
+                }else {
+                    p.setOpis(newPrihod.getOpis());
+                }
             }
 
         }

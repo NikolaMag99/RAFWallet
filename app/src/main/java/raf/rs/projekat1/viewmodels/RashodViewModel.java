@@ -64,7 +64,11 @@ public class RashodViewModel extends ViewModel {
             if(p.getId() == old.getId()) {
                 p.setKolicina(newRashod.getKolicina());
                 p.setNaslov(newRashod.getNaslov());
-                p.setOpis(newRashod.getOpis());
+                if(newRashod.getFile() != null) {
+                    p.setFile(newRashod.getFile());
+                }else {
+                    p.setOpis(newRashod.getOpis());
+                }
             }
 
         }
