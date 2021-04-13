@@ -30,6 +30,7 @@ public class Prihod implements Serializable {
         this.file = file;
     }
 
+
     public int getVrednost() {
         return vrednost;
     }

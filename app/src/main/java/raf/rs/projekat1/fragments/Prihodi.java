@@ -1,5 +1,6 @@
 package raf.rs.projekat1.fragments;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +20,7 @@ import raf.rs.projekat1.adapter.PrihodAdapter;
 import raf.rs.projekat1.adapter.RashodAdapter;
 import raf.rs.projekat1.differ.PrihodDiffItemCallback;
 import raf.rs.projekat1.differ.RashodDiffItemCallback;
+import raf.rs.projekat1.models.Prihod;
 import raf.rs.projekat1.viewmodels.PrihodViewModel;
 import raf.rs.projekat1.viewmodels.RashodViewModel;
 
@@ -27,6 +29,7 @@ public class Prihodi extends Fragment {
     private RecyclerView recyclerView;
     private PrihodViewModel prihodViewModel;
     private PrihodAdapter prihodAdapter;
+    private static final int EDIT_KEY = 123;
 
     public Prihodi() {
         super(R.layout.prihodi_recycler);
@@ -67,7 +70,8 @@ public class Prihodi extends Fragment {
 
         }, edit -> {
             Intent intent = new Intent(getActivity(), EditPrihodaActivity.class);
-            startActivity(intent);
+            intent.putExtra("prihodEdit", edit);
+            startActivityForResult(intent, EDIT_KEY);
             return null;
 
         }, view -> {
@@ -80,4 +84,23 @@ public class Prihodi extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(prihodAdapter);
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == Activity.RESULT_CANCELED){
+            return;
+        }
+        if(requestCode == EDIT_KEY && resultCode == Activity.RESULT_OK){
+            Prihod old = (Prihod) data.getSerializableExtra("OLD");
+            Prihod newPrihod = (Prihod)data.getSerializableExtra("NEW");
+//            prihodViewModel.removePrihod(old);
+//            prihodViewModel.addPrihod(newPrihod);
+            prihodViewModel.newPrihod(old,newPrihod);
+            prihodAdapter.notifyDataSetChanged();
+            return;
+        }
+    }
+
+
 }

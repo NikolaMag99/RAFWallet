@@ -1,5 +1,6 @@
 package raf.rs.projekat1.fragments;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ import raf.rs.projekat1.PrikazRashodaActivity;
 import raf.rs.projekat1.R;
 import raf.rs.projekat1.adapter.RashodAdapter;
 import raf.rs.projekat1.differ.RashodDiffItemCallback;
+import raf.rs.projekat1.models.Prihod;
 import raf.rs.projekat1.models.Rashod;
 import raf.rs.projekat1.viewmodels.RashodViewModel;
 import timber.log.Timber;
@@ -38,6 +40,7 @@ public class Rashodi extends Fragment {
     private RashodAdapter rashodAdapter;
     private int kolicinaRashoda;
     private String naslovRashoda;
+    private static final int EDIT_KEY = 1234;
 
     public Rashodi() {
         super(R.layout.rashodi_recycler);
@@ -78,7 +81,8 @@ public class Rashodi extends Fragment {
             return null;
         }, eidt -> {
             Intent intent = new Intent(getActivity(), EditRashodaActivity.class);
-            startActivity(intent);
+            intent.putExtra("rashodEdit", eidt);
+            startActivityForResult(intent, EDIT_KEY);
             return null;
         }, view -> {
             Intent intent = new Intent(getActivity(), PrikazRashodaActivity.class);
@@ -88,5 +92,22 @@ public class Rashodi extends Fragment {
         });
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(rashodAdapter);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == Activity.RESULT_CANCELED){
+            return;
+        }
+        if(requestCode == EDIT_KEY && resultCode == Activity.RESULT_OK){
+            Rashod old = (Rashod) data.getSerializableExtra("OLD");
+            Rashod newRashod = (Rashod)data.getSerializableExtra("NEW");
+//            prihodViewModel.removePrihod(old);
+//            prihodViewModel.addPrihod(newPrihod);
+            rashodViewModel.newRashod(old,newRashod);
+            rashodAdapter.notifyDataSetChanged();
+            return;
+        }
     }
 }

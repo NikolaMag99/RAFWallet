@@ -63,7 +63,6 @@ public class PrikazPrihodaActivity extends AppCompatActivity {
         if (intent.getExtras() != null) {
             Prihod prihod = (Prihod) intent.getExtras().getSerializable("prihod");
 
-
             if (prihod.getFile() != null) {
                 play.setVisibility(View.VISIBLE);
                 opis.setVisibility(View.GONE);

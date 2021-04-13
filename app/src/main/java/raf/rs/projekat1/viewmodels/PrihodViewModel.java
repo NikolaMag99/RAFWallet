@@ -55,5 +55,18 @@ public class PrihodViewModel extends ViewModel {
         prihodi.setValue(listToSubmit);
     }
 
+    public void newPrihod(Prihod old, Prihod newPrihod) {
+        for (Prihod p: prihodiLista){
+            if(p.getId() == old.getId()) {
+                p.setKolicina(newPrihod.getKolicina());
+                p.setNaslov(newPrihod.getNaslov());
+                p.setOpis(newPrihod.getOpis());
+            }
+
+        }
+        ArrayList<Prihod> listToSubmit = new ArrayList<>(prihodiLista);
+        prihodi.setValue(listToSubmit);
+    }
+
 
 }

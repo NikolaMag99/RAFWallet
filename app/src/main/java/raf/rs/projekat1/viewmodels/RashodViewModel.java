@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
+import raf.rs.projekat1.models.Prihod;
 import raf.rs.projekat1.models.Rashod;
 
 
@@ -53,6 +54,19 @@ public class RashodViewModel extends ViewModel {
 
     public void removeRashod(Rashod rashod) {
         rashodiLista.remove(rashod);
+        ArrayList<Rashod> listToSubmit = new ArrayList<>(rashodiLista);
+        rashodi.setValue(listToSubmit);
+    }
+
+    public void newRashod(Rashod old, Rashod newRashod) {
+        for (Rashod p: rashodiLista){
+            if(p.getId() == old.getId()) {
+                p.setKolicina(newRashod.getKolicina());
+                p.setNaslov(newRashod.getNaslov());
+                p.setOpis(newRashod.getOpis());
+            }
+
+        }
         ArrayList<Rashod> listToSubmit = new ArrayList<>(rashodiLista);
         rashodi.setValue(listToSubmit);
     }
