@@ -42,4 +42,5 @@
     <string name="opis_podaci">Opis:</string>
     <string name="podaci_o_prihodu_rashodu_podaci">Podaci o prihodu/rashodu</string>
     <string name="podaci_o_prihodu_rashodu_edit">Podaci o prihodu/rashodu</string>
+    <string name="pregled_ukupnog_stanja_racuna">Pregled ukupnog stanja racuna</string>
 </resources>

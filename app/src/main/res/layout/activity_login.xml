@@ -7,9 +7,6 @@
     tools:context=".LoginActivity"
     style="@style/TextViewStyle">
 
-
-
-
     <ImageView
         android:id="@+id/imageLogin"
         android:layout_width="150dp"

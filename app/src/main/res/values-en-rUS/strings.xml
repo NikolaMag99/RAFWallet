@@ -10,13 +10,13 @@
     <string name="liste">Lists</string>
     <string name="unos">Add</string>
     <string name="stanje">Balance</string>
-    <string name="razlika">The difference</string>
+    <string name="razlika">The difference:</string>
     <string name="opis">Description</string>
     <string name="audio">Audio</string>
     <string name="kolicina">Quantity</string>
     <string name="naslov">Title</string>
-    <string name="prihod">Income</string>
-    <string name="rashod">Expenses</string>
+    <string name="prihod">Income:</string>
+    <string name="rashod">Expenses:</string>
     <string name="dodaj_u_listu">Add in lists</string>
     <string name="izmeni">Change</string>
     <string name="banka">Bank:</string>
@@ -42,4 +42,5 @@
     <string name="naslov_podaci">Title:</string>
     <string name="kolicina_podaci">Quantity:</string>
     <string name="opis_podaci">Description:</string>
+    <string name="pregled_ukupnog_stanja_racuna">Overview of the total account balance</string>
 </resources>
