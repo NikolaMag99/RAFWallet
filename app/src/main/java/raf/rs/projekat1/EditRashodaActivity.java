@@ -182,14 +182,22 @@ public class EditRashodaActivity extends AppCompatActivity {
                         mediaRecorder = null;
                     });
                     izmeni.setOnClickListener(v -> {
-                        initPlayer();
+                        if (naslov.getText().toString().isEmpty() || kolicina.getText().toString().isEmpty()){
+                            Toast.makeText(this, "Popuni sva polja!", Toast.LENGTH_SHORT).show();
+                        }  else {
+                            initPlayer();
+                        }
                     });
                 }
                 else {
                     mic.setVisibility(View.GONE);
                     opis.setVisibility(View.VISIBLE);
                     izmeni.setOnClickListener(v -> {
-                        initOpis();
+                        if (naslov.getText().toString().isEmpty() || kolicina.getText().toString().isEmpty()){
+                            Toast.makeText(this, "Popuni sva polja!", Toast.LENGTH_SHORT).show();
+                        }  else {
+                            initOpis();
+                        }
                     });
                 }
             }
