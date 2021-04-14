@@ -11,7 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="7"
         android:gravity="center"
         android:orientation="vertical">
         <TextView
@@ -19,10 +19,8 @@
             android:id="@+id/podaciKorisnika"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             android:textSize="20sp"
-            android:layout_gravity="center|top"
+            android:gravity="center"
             android:text="@string/podaci_o_korisniku_Unos" />
 
         <Spinner
@@ -30,7 +28,7 @@
             android:id="@+id/aSpinner"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="40dp"
             android:layout_gravity="left"
             android:entries="@array/Spinner_items"/>
@@ -39,8 +37,8 @@
             style="@style/TextViewStyle"
             android:id="@+id/naslov"
             android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="40dp"
             android:layout_gravity="left"
             android:textSize="20sp"
@@ -50,8 +48,8 @@
             style="@style/TextViewStyle"
             android:id="@+id/kolicina"
             android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="40dp"
             android:layout_gravity="left"
             android:textSize="20sp"
@@ -66,31 +64,30 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="40dp"
             android:layout_gravity="left"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:text="@string/audio"/>
 
             <EditText
                 style="@style/TextViewStyle"
                 android:id="@+id/opis"
                 android:layout_width="250dp"
-                android:layout_height="180dp"
+                android:layout_height="100dp"
                 android:background="@drawable/border"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="40dp"
                 android:layout_gravity="left"
-                android:textSize="20sp"
                 android:gravity="top"
-                android:paddingTop="20dp"
+                android:paddingTop="30dp"
                 android:paddingLeft="20dp"
-                android:hint="@string/opis"
-                android:inputType="text"/>
+                android:inputType="textMultiLine"
+                android:hint="@string/opis" />
 
 
         <ImageView
             android:id="@+id/btnMic"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_marginBottom="50dp"
+            android:layout_height="70dp"
+            android:layout_marginBottom="20dp"
             android:layout_marginTop="30dp"
             style="@style/ImageViewStyle"
             android:src="@drawable/ic_mic"
@@ -99,18 +96,24 @@
         <ImageView
             android:id="@+id/btnRecording"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginBottom="50dp"
+            android:layout_height="70dp"
+            android:layout_marginBottom="20dp"
             android:layout_marginTop="20dp"
             android:src="@drawable/ic_mic"
             android:visibility="gone"
             app:tint="@android:color/holo_red_light" />
+    </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
         <Button
             android:id="@+id/dodajUListuBtn"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginTop="20dp"
             android:layout_gravity="center"
              android:text="@string/dodaj_u_listu"/>
 

@@ -118,24 +118,24 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center"
+        android:layout_margin="20dp"
         android:orientation="horizontal">
         <Button
             android:id="@+id/izmeniBtn"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="40dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
             android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:textSize="15sp"
             android:text="@string/izmeni_Main" />
         <Button
             android:id="@+id/odjavaBtn"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="40dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
             android:layout_marginTop="5dp"
+            android:textSize="15sp"
             android:text="@string/odjava_Main" />
     </LinearLayout>
 

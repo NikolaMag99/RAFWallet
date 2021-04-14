@@ -159,16 +159,26 @@ public class EditPrihodaActivity extends AppCompatActivity {
                     mediaRecorder.release();
                     mediaRecorder = null;
                 });
-                izmeni.setOnClickListener(v -> {
-                    initPlayer();
-                });
+
+                    izmeni.setOnClickListener(v -> {
+                        if (naslov.getText().toString().isEmpty() || kolicina.getText().toString().isEmpty()){
+                            Toast.makeText(this, "Popuni sva polja!", Toast.LENGTH_SHORT).show();
+                        }  else {
+                            initPlayer();
+                        }
+                    });
+
             }
             else {
                 mic.setVisibility(View.GONE);
                 opis.setVisibility(View.VISIBLE);
-                izmeni.setOnClickListener(v -> {
-                    initOpis();
-                });
+                    izmeni.setOnClickListener(v -> {
+                        if (naslov.getText().toString().isEmpty() || kolicina.getText().toString().isEmpty()){
+                            Toast.makeText(this, "Popuni sva polja!", Toast.LENGTH_SHORT).show();
+                        }  else {
+                            initOpis();
+                        }
+                    });
             }
         }
 

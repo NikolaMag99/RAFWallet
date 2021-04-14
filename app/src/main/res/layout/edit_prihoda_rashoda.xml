@@ -22,7 +22,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:textSize="20sp"
-            android:layout_marginTop="-10dp"
             android:layout_gravity="center|top"
             android:text="@string/podaci_o_prihodu_rashodu_edit"
             />
@@ -31,7 +30,7 @@
         <EditText
             android:id="@+id/naslovEdit"
             android:layout_width="250dp"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="40dp"
             android:layout_gravity="left"
@@ -41,7 +40,7 @@
         <EditText
             android:id="@+id/kolicinaEdit"
             android:layout_width="250dp"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="40dp"
             android:layout_gravity="left"
@@ -65,7 +64,7 @@
                 style="@style/TextViewStyle"
                 android:id="@+id/opisEdit"
                 android:layout_width="250dp"
-                android:layout_height="180dp"
+                android:layout_height="100dp"
                 android:background="@drawable/border"
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="40dp"
@@ -81,9 +80,8 @@
         <ImageView
             android:id="@+id/btnMicEdit"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_marginBottom="50dp"
-            android:layout_marginTop="30dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="20dp"
             style="@style/ImageViewStyle"
             android:src="@drawable/ic_mic"
             android:visibility="gone"/>
@@ -91,9 +89,8 @@
         <ImageView
             android:id="@+id/btnRecordingEdit"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginBottom="50dp"
-            android:layout_marginTop="30dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="20dp"
             android:src="@drawable/ic_mic"
             android:visibility="gone"
             app:tint="@android:color/holo_red_light" />
@@ -109,7 +106,7 @@
             android:id="@+id/odustaniEdit"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginLeft="0dp"
             android:layout_gravity="left"
              android:text="@string/odustani_edit"/>
@@ -118,7 +115,7 @@
         android:id="@+id/izmeniBtnEdit"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="80dp"
         android:layout_marginRight="30dp"
         android:layout_gravity="left"
